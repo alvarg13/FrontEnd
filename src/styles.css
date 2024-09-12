@@ -1,0 +1,230 @@
+/* You can add global styles to this file, and also import other style files */ 
+
+.MallaContenido{
+    display:grid;
+    grid-template-rows:  auto auto auto;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.BarraSuperior{
+    grid-row: 1;
+    grid-column: 1 / 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ParteCentral{
+    grid-row: 2;
+    grid-column: 2;
+    min-height:100vh ;
+    width: 100%;
+    padding: clamp(100px,10vh,10vh) 0 clamp(100px,10vh,10vh) 0;
+}
+
+.LateralDerecho{
+    grid-row: 2;
+    grid-column: 3;
+    padding: 8vh 0 4vh 0;
+}
+
+.LateralIzquierdo{
+    grid-row: 2;
+    grid-column: 1;
+    padding: 8vh 0 4vh 0;
+}
+
+.LateralDerechoBajo{
+    grid-row: 3;
+    grid-column: 3;
+    background-color:rgba(35,47,63,255);
+}
+
+.LateralIzquierdoBajo{
+    grid-row: 3;
+    grid-column: 1;
+    background-color:rgba(35,47,63,255);
+}
+
+.Formacion{
+    font-size: clamp(20px,2vh,2vh);
+}
+
+
+
+
+.BarraSuperior_link{
+    text-decoration: none;
+    color: white;
+    padding: 0 clamp(10px,1vw,1vw) 0 0;
+    font-size: clamp(30px,3vh,3vh);
+}
+
+
+
+.BarraSuperior_P{
+    position: fixed;
+    color: white;
+    text-decoration: none;
+    top: 0;
+    left: 0;
+    padding: 0.5vh 1vw 0.5vh 1vw ;
+    background-color: rgba(19,25,33,255);
+    width: 100%;
+    font-size: clamp(30px,3vh,3vh);
+    height:  clamp(40px,4vh,4vh);
+}
+
+.BarraSuperior_S{
+    list-style: none;
+    position: fixed;
+    margin: 0;
+    padding: 0.5vh 1vw 0.5vh 1vw ;
+    background-color:rgba(35,47,63,255);
+    top: clamp(40px,4vh,4vh);
+    left: 0px;
+    width: 100%;    
+    height: clamp(40px,4vh,4vh);
+    white-space: nowrap;
+}
+
+.BarraSuperior_objeto{
+    display: inline-block;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+p{
+    padding: 0;
+    text-align: justify;
+    font-size: clamp(20px,2vh,2vh);
+}
+
+li{
+    font-size: clamp(20px,2vh,2vh);
+}
+
+#Contact{
+    background-color:rgba(35,47,63,255);
+    color: white;
+    padding: 10px 15px 10px 15px;
+    grid-row: 3;
+    grid-column: 2;
+    
+
+}
+
+#About{
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 1.5vh;
+    padding: 0;
+}
+
+#Form{
+    scroll-margin-top: clamp(100px,10vh,10vh);
+}
+
+#Info{
+    scroll-margin-top: clamp(100px,10vh,10vh);
+}
+
+#Languages{
+    scroll-margin-top: clamp(100px,10vh,10vh);
+}
+
+
+#Home{
+    scroll-margin-top: clamp(100px,10vh,10vh);
+}
+
+.ListaContacto{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    font-size: clamp(20px,2vh,2vh);
+}
+
+a{
+    color: white;
+}
+
+.ContactoTitulo{
+    margin: 0;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size: clamp(30px,3vh,3vh);
+}
+
+*{
+    box-sizing: border-box;
+    font-size: clamp(20px,2vh,2vh);
+}
+
+input{
+    font-size: clamp(17px,1.7vh,1.7vh);
+    box-sizing: border-box;
+}
+
+h1{
+    font-size:  clamp(30px,3vh,3vh);
+}
+
+#Div2{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row: auto;
+}
+
+#Who{
+    scroll-margin-top: clamp(100px,10vh,10vh);
+}
+
+#Foto{
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+}
+
+.FotoPerfil{
+    width: 18vh;
+    min-width: 200px;
+    margin-left: 1.5vh;
+    display: flex;
+    align-items: center;
+}
+
+.RecuadroGrande{
+width: 100%;
+height: 18vh;
+}
+
+textarea{
+    font-size: clamp(17px,1.5vh,1.7vh);;
+    box-sizing: border-box;
+}
+
+.Error{
+    color: red;
+}
+
+/*Eliminar flecha*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: text;
+}

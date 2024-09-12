@@ -1,0 +1,272 @@
+
+<div class="MallaContenido" [ngStyle]="{'grid-template-columns': gridTemplateColumns}" >
+
+  <nav class="BarraSuperior">
+    <a class="BarraSuperior_P" href="#"> CV WebPage</a>
+    <ul class="BarraSuperior_S">
+
+      <li class="BarraSuperior_objeto">
+        <a href="#Home"  class="BarraSuperior_link"> Home</a>
+      </li>
+
+      <li class="BarraSuperior_objeto">
+        <a href="#Who"  class="BarraSuperior_link"> About me</a>
+      </li>
+
+      <li class="BarraSuperior_objeto">
+        <a href="#Form" class="BarraSuperior_link"> Form</a>
+      </li>
+
+      <li class="BarraSuperior_objeto">
+        <a href="#Contact"  class="BarraSuperior_link"> Contact </a>
+      </li>
+
+    </ul>
+  </nav>
+
+
+
+
+
+
+
+  <div Class="ParteCentral" [ngStyle]="{'color': fontcolor}" >
+
+      <div id="Home" *ngIf="!OcultarTexto">
+        <h1 >What is this page?</h1>
+          <p >
+            This page has two main purposes: to demonstrate the capabilities I, the developer, have acquired during the course and to serve as a blueprint for CV-like presentations.
+          </p>
+
+          <p *ngIf="!OcultarTexto">
+            This page contains a forum where you can submit all of your details, such as education and experience. Once filled, all the information already shown, the developer information,
+            will be swapped with your details.
+          </p>
+          <br>
+
+      </div>
+
+
+
+
+      <h1 id="Who">Who am I?</h1>
+      <div id="Div2">
+          <div id="About">
+              <p>
+                {{aboutmeBase}} 
+              </p>
+              <br>
+          </div>
+
+          <div id="Foto">
+            <img [src]="FotoURLBase" alt="Profile picture" class="FotoPerfil"/>
+          </div>
+
+      </div>
+
+
+
+
+
+      <div id="Work" *ngIf="BoolWork">
+        <h1>Where am I working? Where have I worked?</h1>
+          <p *ngIf="!OcultarTexto">
+            Sadly, this is just a placeholder. I do not have experience yet :(
+          </p>
+          <ul class="Formacion">
+            <li *ngFor="let item of workBase">{{item}}</li>
+          </ul>
+          <br>
+      </div>
+
+
+
+
+      
+      <div id="Studies">
+        <h1>What am I studying? What have I estudied?</h1>
+        <ul class="Formacion">
+          <li *ngFor="let item of studiesBase">{{item}}</li>
+        </ul>
+        <br>
+      </div>
+
+
+
+
+
+      <div id="Info">
+        <h1>Additional information</h1>
+        <ul class="Info">
+          <li *ngFor="let item of infoBase">{{item}}</li>
+        </ul>
+        <br>
+      </div>
+
+
+
+
+
+      <div id="Languages">
+        <h1>Languages </h1>
+        <ul class="Languages">
+          <li *ngFor="let item of languagesBase">{{item}}</li>
+        </ul>
+        <br>
+      </div>
+
+
+
+
+
+      <div id="Form" *ngIf="FinForm">  
+        <h1>Form</h1>
+        <p>In this form, you can enter your details to personalize the webpage for yourself.</p>
+        <form method="get" class="Formulario">
+
+          <!-- Información de contacto-->
+          <label for="Phone"> Phone number: </label>
+          <input type="number" [(ngModel)]="Telefono" name="phone" required placeholder="000 00 00 00"> 
+          <p class="Error" *ngIf="!BoolPhone"> Incorrect number</p>
+
+          <br *ngIf="BoolPhone">
+          <br *ngIf="BoolPhone">
+
+          <label for="Prefix"> Phone prefix: </label>
+          <input type="number" [(ngModel)]="Prefijo" required name="prefix" placeholder="00"> 
+          <p class="Error" *ngIf="!BoolPrefix"> Incorrect prefix</p>
+
+          <br *ngIf="BoolPrefix">
+          <br *ngIf="BoolPrefix">
+
+          <label for="email"> Email: </label>
+          <input type="email" [(ngModel)]="Correo"  required name="mail" placeholder="example@mail.com"> 
+          <p class="Error" *ngIf="!BoolEmail"> Incorrect email</p>
+
+          <br *ngIf="BoolEmail">
+          <br *ngIf="BoolEmail">
+          
+          <!-- LinkedIn-->
+          <span> LinkedIn page: </span>
+          <label for="linkedin"></label>
+          <input type="url" [(ngModel)]="linkedin"  name="linkedin" placeholder="URL">
+
+          <br>
+          <br>
+
+          <!-- Github-->
+          <span> Github page:&nbsp;&nbsp;&nbsp;  &nbsp;</span>
+          <label for="github"></label>
+          <input type="url" [(ngModel)]="github"  name="github" placeholder="URL" >
+
+
+          <br>
+          <br>
+
+          <!-- ABOUT ME-->
+          <label for="aboutme"> About me: </label> 
+          <p class="Error" *ngIf="!BoolAbout"> Field is empty</p>
+
+          <br *ngIf="BoolAbout">
+          <br *ngIf="BoolAbout">
+
+          <textarea type="text" [(ngModel)]="aboutme"  required name="aboutme" class="RecuadroGrande" placeholder="Describe yourself"></textarea>
+          <br>
+          <br>
+          <span> Add picture: </span>
+          <label for="github"></label>
+          <input type="url" [(ngModel)]="FotoURL"  name="BoolFoto" placeholder="URL" *ngIf="BoolFoto">
+          <br>
+
+          <br>
+
+          <!-- Work-->
+          <label for="work"> Working experience: </label>
+          <br>
+          <br>
+          <textarea required type="text" [(ngModel)]="work"  name="work" class="RecuadroGrande" placeholder="Describe your working experience (List separated by line breaks)"></textarea>
+          <br>
+          <br>
+
+          <!-- Estudies-->
+          <label for="studies"> Academic background: </label>
+          <p class="Error" *ngIf="!BoolBack"> Field is empty</p>
+
+          <br *ngIf="BoolBack">
+          <br *ngIf="BoolBack">
+
+          <textarea required type="text" [(ngModel)]="studies"  name="studies" class="RecuadroGrande" placeholder="Describe your academic background (List separated by line breaks)"></textarea>
+          <br>
+          <br>
+
+          <!-- Info-->
+          <label for="info"> Tell more about yourself: </label> 
+          <p class="Error" *ngIf="!BoolInfo"> Field is empty</p>
+
+          <br *ngIf="BoolInfo">
+          <br *ngIf="BoolInfo">
+
+          <textarea required type="text" [(ngModel)]="info"  name="info" class="RecuadroGrande" placeholder="Describe something else about yourself (List separated by line breaks)"></textarea>
+          <br>
+          <br>
+
+          <!-- Languaes-->
+          <label for="languages"> Languages: </label> 
+          <p class="Error" *ngIf="!BoolLanguage"> Field is empty</p>
+
+          <br *ngIf="BoolLanguage">
+          <br *ngIf="BoolLanguage">
+          <textarea required type="text" [(ngModel)]="languages"  name="languages" class="RecuadroGrande" placeholder="which languages do you know? (List separated by line breaks)"></textarea>
+          <br>
+          <br>
+        
+          
+          <button type="submit" (click)="AnadirDatos()">
+            Submit
+          </button>
+
+          <br>
+          <p *ngIf="!BoolValid" class="Error"> Verify that the submited data is correct!</p>
+
+          <br>
+          <br>
+          <button *ngIf="(Finalizado && BoolValid)" (click)="OcultarTodo()">
+            Finish editing
+          </button>
+          <p *ngIf="(Finalizado && BoolValid)"> This will remove the form, save the page by pressing crtl+s</p>
+
+        </form>
+        <br>      
+      </div>
+  </div>
+
+
+
+
+
+
+  
+
+  <div class="LateralIzquierdo"></div>
+  <div class="LateralDerecho"></div>
+  <div class="LateralIzquierdoBajo"></div>
+  <div class="LateralDerechoBajo"></div>
+
+
+  <div id="Contact">
+
+    <h2 class="ContactoTitulo">Contact</h2>
+    <ul class="ListaContacto">
+      <li> Phone: +{{PrefijoBase}} {{TelefonoBase}}</li>
+      <li (click)="CopiaCorreo(CorreoBase)"> Email: {{CorreoBase}} </li>
+      <li *ngIf="BoolLkd"> <a href={{linkedinBase}}> LinkedIn</a></li>
+      <li *ngIf="BoolGit">  <a href={{githubBase}}> Github</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+
